@@ -1,0 +1,5 @@
+function a()
+    a = 3
+    s = 2 ^ 2 - 4 * a \ 7
+    print (s + 2)
+end

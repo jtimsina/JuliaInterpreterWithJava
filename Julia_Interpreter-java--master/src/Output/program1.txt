@@ -1,0 +1,31 @@
+#######################
+The program "src/Input/program1.txt" parsed is:
+function a()
+    i = 4 + 3
+end
+#######################
+*#*#Parse Tree#*#*
+Level 0 Program node, children:
+	function: 'function'
+	function id: 'a'
+	block: 'i = 4 + 3'
+	terminal: 'end'
+- Level 1 Block node, children:
+	statement: 'i = 4 + 3'
+- - Level 2 Statement node, child:
+	Assign statement: 'i = 4 + 3'
+- - - Level 3 Assign Statement node, children:
+	id: 'i'
+	assignment_operator: '='
+	arithmetic expression: '4 + 3'
+- - - - Level 4 Arithmetic Expression node, child:
+	binary expression: '4 + 3'
+- - - - - Level 5 Binary Expression node, child:
+	assignment operator: 'add_operator'
+	arithmetic expression1: '4'
+	arithmetic expression2: '3'
+- - - - - - Level 6 Arithmetic Expression node, child:
+	literal integer: '4'
+- - - - - - Level 6 Arithmetic Expression node, child:
+	literal integer: '3'
+*#*#End of the Parse Tree#*#*

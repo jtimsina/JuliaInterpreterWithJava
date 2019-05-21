@@ -1,0 +1,44 @@
+CS 4308 Project
+
+The project for this term is the implement the following project in three different languages: Java, Ada, and Python.
+Interpreter Project
+This project will be to write an interpreter for a minimal form of Julia. This minimal form of Julia has only 1 data type, integer, and the only identifiers are single letters.
+The interpreter will parse a Julia program and build some intermediate data structures. These data structures will then be interpreted to execute the program. All tokens in this language are separated by white space. The parsing algorithm should detect any syntactical or semantic error. The first such error discovered should cause an appropriate error message to be printed, and then the interpreter should terminate. Run-time errors should also be detected with appropriate error messages being printed.
+
+The Java version and Python versions of the project are due at 8:00 am on Monday, October 29th. The Ada version is due at 8:00 am on Monday, December 3rd.
+Grammar for the language
+
+Parser
+
+<program> → function id ( ) <block> end
+<block> → <statement> | <statement> <block>
+<statement> → <if_statement> | <assignment_statement> | <while_statement> | <print_statement> | <for_statement>
+    <if_statement> → if <boolean_expression> <block> else <block> end
+    <while_statement> → while <boolean_expression> <block> end
+    <assignment_statement> -> id <assignment_operator> <arithmetic_expression>
+    <for_statement> -> for id = <iter> <block> end
+    <print_statement> → print ( <arithmetic_expression> )
+<iter> → <arithmetic_expression> : <arithmetic_expression>
+<boolean_expression> → <relative_op> <arithmetic_expression> <arithmetic_expression>
+<relative_op> → le_operator | lt_operator | ge_operator | gt_operator | eq_operator | ne_operator
+<arithmetic_expression> → <id> | <literal_integer> | <binary_expression>
+<binary_expression> → <arithmetic_op> <arithmetic_expression> <arithmetic_expression>
+<arithmetic_op> → add_operator | sub_operator | mul_operator | div_operator | mod_operator | exp_operator | rev_div_operator
+
+Lexical Analyzer
+id → letter
+literal_integer → digit literal_integer | digit
+assignment_operator → =
+le_operator → <=
+lt_operator → <
+ge_operator → >=
+gt_operator → >
+eq_operator → = =
+ne_operator → !=
+add_operator → +
+sub_operator → -
+mul_operator → *
+div_operator → /
+mod_operator → %
+rev_div_operator → \
+exp_operator → ^

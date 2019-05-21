@@ -1,0 +1,89 @@
+#######################
+The program "src/Input/program2.txt" parsed is:
+function a()
+    a = 3
+    s = 2 ^ 2 - 4 * a \ 7
+    print (s + 2)
+end
+#######################
+*#*#Parse Tree#*#*
+Level 0 Program node, children:
+	function: 'function'
+	function id: 'a'
+	block: 'a = 3
+    s = 2 ^ 2 - 4 * a \ 7
+    print (s + 2)'
+	terminal: 'end'
+- Level 1 Block node, children:
+	statement: 'a = 3'
+	block: 's = 2 ^ 2 - 4 * a \ 7
+    print (s + 2)'
+- - Level 2 Statement node, child:
+	Assign statement: 'a = 3'
+- - - Level 3 Assign Statement node, children:
+	id: 'a'
+	assignment_operator: '='
+	arithmetic expression: '3'
+- - - - Level 4 Arithmetic Expression node, child:
+	literal integer: '3'
+- - Level 2 Block node, children:
+	statement: 's = 2 ^ 2 - 4 * a \ 7'
+	block: 'print (s + 2)'
+- - - Level 3 Statement node, child:
+	Assign statement: 's = 2 ^ 2 - 4 * a \ 7'
+- - - - Level 4 Assign Statement node, children:
+	id: 's'
+	assignment_operator: '='
+	arithmetic expression: '2 ^ 2 - 4 * a \ 7'
+- - - - - Level 5 Arithmetic Expression node, child:
+	binary expression: '2 ^ 2 - 4 * a \ 7'
+- - - - - - Level 6 Binary Expression node, child:
+	assignment operator: 'sub_operator'
+	arithmetic expression1: '2 ^ 2'
+	arithmetic expression2: '4 * a \ 7'
+- - - - - - - Level 7 Arithmetic Expression node, child:
+	binary expression: '2 ^ 2'
+- - - - - - - - Level 8 Binary Expression node, child:
+	assignment operator: 'exp_operator'
+	arithmetic expression1: '2'
+	arithmetic expression2: '2'
+- - - - - - - - - Level 9 Arithmetic Expression node, child:
+	literal integer: '2'
+- - - - - - - - - Level 9 Arithmetic Expression node, child:
+	literal integer: '2'
+- - - - - - - Level 7 Arithmetic Expression node, child:
+	binary expression: '4 * a \ 7'
+- - - - - - - - Level 8 Binary Expression node, child:
+	assignment operator: 'mul_operator'
+	arithmetic expression1: '4'
+	arithmetic expression2: 'a \ 7'
+- - - - - - - - - Level 9 Arithmetic Expression node, child:
+	literal integer: '4'
+- - - - - - - - - Level 9 Arithmetic Expression node, child:
+	binary expression: 'a \ 7'
+- - - - - - - - - - Level 10 Binary Expression node, child:
+	assignment operator: 'rev_div_operator'
+	arithmetic expression1: 'a'
+	arithmetic expression2: '7'
+- - - - - - - - - - - Level 11 Arithmetic Expression node, child:
+	id: 'a'
+- - - - - - - - - - - Level 11 Arithmetic Expression node, child:
+	literal integer: '7'
+- - - Level 3 Block node, children:
+	statement: 'print (s + 2)'
+- - - - Level 4 Statement node, child:
+	Print Statement: 'print (s + 2)'
+- - - - - Level 5 For Statement node, children:
+	function: 'print'
+	arithmetic expression: 's + 2'
+- - - - - - Level 6 Arithmetic Expression node, child:
+	binary expression: 's + 2'
+- - - - - - - Level 7 Binary Expression node, child:
+	assignment operator: 'add_operator'
+	arithmetic expression1: 's'
+	arithmetic expression2: '2'
+- - - - - - - - Level 8 Arithmetic Expression node, child:
+	id: 's'
+- - - - - - - - Level 8 Arithmetic Expression node, child:
+	literal integer: '2'
+*#*#End of the Parse Tree#*#*
